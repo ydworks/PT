@@ -1,0 +1,8 @@
+/config
+public
+dist
+.umi
+.umi-production
+.umi-test
+mock
+.eslintrc.js

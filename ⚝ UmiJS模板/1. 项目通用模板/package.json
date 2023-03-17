@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "umi dev",
+    "build": "umi build",
+    "dev:prod": "cross-env UMI_ENV=prod umi dev",
+    "build:prod": "cross-env UMI_ENV=prod umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.36"
+  },
+  "devDependencies": {
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.35"
+  }
+}
